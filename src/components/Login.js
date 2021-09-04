@@ -26,29 +26,41 @@ export const Login = () => {
   return (
     <>
       <div>
-        <h2 className='font-bold'>Login</h2>
         {
-          error && <div>{error}</div>
+          error && <div className={'text-danger'}>{error}</div>
         }
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">Email: </label>
-            <input type="email" required={true} id={'email'} ref={emailRef} />
-          </div>
-          <div>
-            <label htmlFor="password">Password: </label>
-            <input type="password" required={true} id={'password'} ref={passwordRef} />
-          </div>
-          <div>
-            <button disabled={loading} type={'submit'}>Login</button>
+          <div className="py-12 text-primary w-80">
+            <h2 className="text-3xl font-bold">Login</h2>
+            <div className="mt-8 max-w-screen-md">
+              <div className="grid grid-cols-1 gap-6">
+                <label className="block">
+                  <span className="text-secondary">Email address</span>
+                  <input type="email" required={true} ref={emailRef}
+                         className="form-input mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                  />
+                </label>
+                <label className="block">
+                  <span className="text-secondary">Password</span>
+                  <input type="password" ref={passwordRef}
+                         className="form-input mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                  />
+                </label>
+                <div className="block mt-2">
+                  <button className={'text-secondary'} type={'submit'} disabled={loading}>
+                    Login
+                  </button>
+                </div>
+                <div className="block mt-2">
+                  <Link to={'/forgot-password'}>Forgot Password</Link>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
-        <div>
-          <Link to={'/forgot-password'}>Forgot Password</Link>
+        <div className={'text-warning'}>
+          Need an account ? <Link  to={'/register'}>Register</Link>
         </div>
-      </div>
-      <div>
-        Need an account ? <Link  to={'/register'}>Register</Link>
       </div>
     </>
   )

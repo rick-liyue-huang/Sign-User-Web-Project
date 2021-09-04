@@ -29,6 +29,13 @@ module.exports = {
         bootstrap_danger: '#dc3545',
         bootstrap_info: '#0dcaf0',
       },
+
+      textColor: {
+        'primary': '#3490dc',
+        'secondary': '#108acc',
+        'warning': '#9e2fe3',
+        'danger': '#dc3545'
+      },
       fontFamily: {
         'rick-font': ['Architects Daughter']
       }
@@ -38,6 +45,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/forms')
+    require("@tailwindcss/forms")({
+      strategy: 'class',
+    }),
   ],
 }

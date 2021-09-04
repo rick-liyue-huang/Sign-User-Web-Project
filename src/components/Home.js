@@ -18,12 +18,20 @@ export const  Home = () => {
     }
   }
   return (
-    <div>
-      <h2>Home Page</h2>
-      {error  && <div>{error}</div>}
-      <Link to={'/update-info'}>Update Info</Link>
-      <strong>Email: {currentUser.email}</strong>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="py-12 text-primary w-80">
+      <div className="bg-white rounded overflow-hidden shadow-md">
+        <h2 className="text-3xl font-bold">Home Page</h2>
+        {error  && <div className={'text-danger'}>{error}</div>}
+        <div className="p-2">
+          <div className="text-warning text-md">Email: {currentUser.email}</div>
+        </div>
+        <div className="p-2 border-t border-gray-200">
+          <div className="flex justify-center text-lg text-secondary">
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        </div>
+
+      </div>
     </div>
   )
 }
