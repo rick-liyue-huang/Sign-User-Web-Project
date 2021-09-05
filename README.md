@@ -8,16 +8,13 @@ authentication, and then get the 'firebaseConfig' containing the project informa
 
 Secondly, the whole project is created by 'create-react-app typescript' framework. It will include all the user 
 authentication functions, including 'register', 'login', 'logout', 'reset password' and 'update user info'. Because 
-this is one typescript based project, I must consider add 'types' on the firebase api, I use [@firebase/auth-types](https://www.npmjs.com/package/@firebase/auth-types) framework to combine the firebase api with my React app. Certainly, this is 
-project will use the newest hooks features to deal with my components.
+this is one typescript based project, I must consider add 'types' on the firebase api, I use [@firebase/auth-types](https://www.npmjs.com/package/@firebase/auth-types) framework to combine the firebase api with my React app. Certainly, this project will use the newest hooks features to deal with my components.
 
 Thirdly, I like to introduce the tailwind.css to my project, which is styled in more original way, so I will create 
-the whole project under the rules: [install Tailwind CSS with Create React App](https://tailwindcss.
-com/docs/guides/create-react-app). 
+the whole project under the rules: [install Tailwind CSS with Create React App](https://tailwindcss.com/docs/guides/create-react-app). 
 
 Finally, I deploy the project in firebase through `firebase deploy --project=default`, and anyone can operate my 
-project by clicking the website: [https://sign-user-web-project.web.app/login](https://sign-user-web-project.web.
-app/login). Enjoy it!
+project by clicking the website: [https://sign-user-web-project.web.app/login](https://sign-user-web-project.web.app/login). Enjoy it!
 
 
 
