@@ -25,12 +25,14 @@ export const  Home = () => {
         <div className="p-2">
           <div className="text-warning text-md">Email: {currentUser.email}</div>
         </div>
+        <Link to="/update-info" className="btn btn-primary w-100 mt-3">
+          Update UserInfo
+        </Link>
         <div className="p-2 border-t border-gray-200">
           <div className="flex justify-center text-lg text-secondary">
             <button onClick={handleLogout}>Logout</button>
           </div>
         </div>
-
       </div>
     </div>
   )

@@ -1,12 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {Register} from './Register';
-import {Login} from './Login';
-import {AuthProvider} from '../context/auth-context';
-import {Home} from './Home';
-import {AuthenticatedRoute} from './AuthenticatedRoute';
-import {GetBackPwd} from './GetBackPwd';
-import {Update} from './Update';
+import {Register} from './components/Register';
+import {Login} from './components/Login';
+import {AuthProvider} from './context/auth-context';
+import {Home} from './components/Home';
+import {AuthenticatedRoute} from './components/AuthenticatedRoute';
+import {GetBackPwd} from './components/GetBackPwd';
+import {Update} from './components/Update';
 
 function App() {
   return (

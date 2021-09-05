@@ -1,15 +1,14 @@
 import React, {useRef, useState} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {useAuth} from "../context/auth-context";
 
 export const GetBackPwd = () => {
   const emailRef = useRef();
-  const passwordRef = useRef();
   const {resetPassword} = useAuth()
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const history = useHistory();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +24,7 @@ export const GetBackPwd = () => {
     }
     setLoading(false);
   }
+
   return (
     <>
       <div>
@@ -36,21 +36,34 @@ export const GetBackPwd = () => {
           message  && <div>{message}</div>
         }
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">Email: </label>
-            <input type="email" required={true} id={'email'} ref={emailRef} />
-          </div>
-          <div>
-            <button disabled={loading} type={'submit'}>Reset Password</button>
+
+          <div className="py-12 text-primary w-80">
+            <h2 className="text-3xl font-bold">Get Back Password</h2>
+            <div className="mt-8 max-w-screen-md">
+              <div className="grid grid-cols-1 gap-6">
+                <label className="block">
+                  <span className="text-secondary">Email address</span>
+                  <input type="email" required={true} ref={emailRef}
+                         className="form-input mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                  />
+                </label>
+                <div className="block mt-2">
+                  <button className={'text-secondary'} type={'submit'} disabled={loading}>
+                    Reset
+                  </button>
+                </div>
+                <div className="block mt-2">
+                  <Link className={'text-secondary'}  to={'/login'}>Login</Link>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
-        <div>
-          <Link to={'/login'}>Login</Link>
+        <div className={'text-warning'}>
+          Need an account ? <Link  to={'/register'}>Register</Link>
         </div>
       </div>
-      <div>
-        Need an account ? <Link  to={'/register'}>Register</Link>
-      </div>
+
     </>
   )
 }
