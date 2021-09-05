@@ -72,7 +72,7 @@ export const Register = () => {
           </div>
         </form>
         <div className={'text-warning'}>
-          Already have an account ? <Link to={'/login'}>Sign In</Link>
+          Already have an account ? <Link to={'/login'}>Login</Link>
         </div>
       </div>
 

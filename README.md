@@ -15,7 +15,10 @@ Thirdly, I like to introduce the tailwind.css to my project, which is styled in 
 the whole project under the rules: [install Tailwind CSS with Create React App](https://tailwindcss.
 com/docs/guides/create-react-app). 
 
-Finally, I deploy the project in firebase. and anyone can operate my project.
+Finally, I deploy the project in firebase through `firebase deploy --project=default`, and anyone can operate my 
+project by clicking the website: [https://sign-user-web-project.web.app/login](https://sign-user-web-project.web.
+app/login). Enjoy it!
+
 
 
 
