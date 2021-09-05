@@ -17,10 +17,10 @@ export const GetBackPwd = () => {
       setMessage('')
       setError('');
       setLoading(true);
+      // must ensure emailRef is existed, same as passwordRef and passwordConfirmRef
       if (emailRef && emailRef.current) {
         await resetPassword(emailRef.current.value);
       }
-
       setMessage('check your email box');
     } catch {
       setError('Failed to reset password');

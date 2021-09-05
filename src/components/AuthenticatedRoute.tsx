@@ -5,6 +5,7 @@ import {useAuth} from "../context/auth-context";
 
 // @ts-ignore
 export const AuthenticatedRoute = ({component: Component, ...rest}) => {
+  // through this router, ensure the component keep the currentUser info.
   const {currentUser} = useAuth();
   return (
     <Route

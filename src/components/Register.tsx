@@ -6,19 +6,20 @@ export const Register = () => {
   const emailRef = useRef<HTMLInputElement | null>(null);
   const passwordRef = useRef<HTMLInputElement | null>(null);
   const passwordConfirmRef = useRef<HTMLInputElement | null>(null);
-  const {register, currentUser} = useAuth()
+  const {register} = useAuth()
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // ensure emailRef, passwordRef, passwordConfirmRef exist
     if (passwordRef && passwordConfirmRef && passwordRef.current && passwordConfirmRef.current) {
       if (passwordRef.current.value !== passwordConfirmRef.current.value) {
         return setError('password does not match');
       }
     }
-
 
     try {
       setError('');
@@ -26,7 +27,6 @@ export const Register = () => {
       if (emailRef && emailRef.current && passwordRef && passwordRef.current) {
         await register(emailRef.current.value, passwordRef.current.value);
       }
-
       history.push('/');
     } catch {
       setError('Failed to create new account');
@@ -36,7 +36,6 @@ export const Register = () => {
   return (
     <>
       <div>
-        {/*{currentUser.email}*/}
         {
           error && <div className={'text-danger'}>{error}</div>
         }

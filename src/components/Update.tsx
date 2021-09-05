@@ -19,22 +19,23 @@ export const Update = () => {
       }
     }
 
-
-    const promise = [];
+    // create promise array to store promise
+    const promises = [];
     setLoading(true);
     setError('');
     if (emailRef && emailRef.current) {
       if (emailRef.current.value !== currentUser?.email) {
-        promise.push(updateEmail(emailRef.current.value));
+        promises.push(updateEmail(emailRef.current.value));
       }
     }
     if (passwordRef && passwordRef.current) {
       if (passwordRef.current.value !== currentUser?.password) {
-        promise.push(updatePassword(passwordRef.current.value));
+        promises.push(updatePassword(passwordRef.current.value));
       }
     }
 
-    Promise.all(promise).then(() => {
+    // deal with all the promise to complete update
+    Promise.all(promises).then(() => {
       history.push('/');
     }).catch(() => {
       setError('failed to update info');

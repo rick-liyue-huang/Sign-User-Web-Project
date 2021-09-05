@@ -1,7 +1,7 @@
 import firebase from "firebase/compat/app";
 import 'firebase/compat/auth';
 
-
+// get the information from firebase created project console
 const firebaseConfig: any = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,

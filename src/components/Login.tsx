@@ -16,10 +16,11 @@ export const Login = () => {
     try {
       setError('');
       setLoading(true);
+      // ensure emailRef, passwordRef, passwordConfirmRef exist
       if (emailRef && passwordRef && emailRef.current && passwordRef.current) {
         await login(emailRef.current.value, passwordRef.current.value);
       }
-
+      // return to home page
       history.push('/');
     } catch {
       setError('Failed to login');
