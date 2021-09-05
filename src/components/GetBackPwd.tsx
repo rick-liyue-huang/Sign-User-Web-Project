@@ -1,23 +1,26 @@
-import React, {useRef, useState} from 'react';
+import React, {FormEvent, useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useAuth} from "../context/auth-context";
 
 export const GetBackPwd = () => {
-  const emailRef = useRef();
+  const emailRef = useRef<HTMLInputElement | null>(null);
   const {resetPassword} = useAuth()
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
       setMessage('')
       setError('');
       setLoading(true);
-      await resetPassword(emailRef.current.value);
+      if (emailRef && emailRef.current) {
+        await resetPassword(emailRef.current.value);
+      }
+
       setMessage('check your email box');
     } catch {
       setError('Failed to reset password');

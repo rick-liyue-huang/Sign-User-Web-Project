@@ -23,7 +23,7 @@ export const  Home = () => {
         <h2 className="text-3xl font-bold">Home Page</h2>
         {error  && <div className={'text-danger'}>{error}</div>}
         <div className="p-2">
-          <div className="text-warning text-md">Email: {currentUser.email}</div>
+          <div className="text-warning text-md">Email: {currentUser?.email}</div>
         </div>
         <Link to="/update-info" className="btn btn-primary w-100 mt-3">
           Update UserInfo
